@@ -15,7 +15,7 @@ export default function FaqsPage() {
             Frequently Asked Questions
           </h1>
           <p className="font-sans text-lg text-muted-foreground">
-            Everything you need to know about the Jane Elissa Extravaganza Music Competition
+            Everything you need to know about The Luminary International Music Competition
           </p>
         </div>
 
@@ -27,10 +27,10 @@ export default function FaqsPage() {
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger className="font-sans text-left">
-                  What is the Jane Elissa Extravaganza?
+                  What is The Luminary International Music Competition?
                 </AccordionTrigger>
                 <AccordionContent className="font-sans text-muted-foreground leading-relaxed">
-                  The Jane Elissa Extravaganza is an annual music competition where the winner earns the opportunity to perform at a prestigious event in Times Square, New York City, alongside celebrated Broadway stars. It's a once-in-a-lifetime opportunity to showcase your talent on one of the world's most iconic stages.
+                  The Luminary International Music Competition is a prestigious annual music competition where the winner earns the opportunity to perform at the Jane Elissa Extravaganza in Times Square, New York City, alongside celebrated Broadway stars. It's a once-in-a-lifetime opportunity to showcase your talent on one of the world's most iconic stages.
                 </AccordionContent>
               </AccordionItem>
 
@@ -57,7 +57,7 @@ export default function FaqsPage() {
                   How do I submit my performance?
                 </AccordionTrigger>
                 <AccordionContent className="font-sans text-muted-foreground leading-relaxed">
-                  You can submit your performance in two ways: upload a video file directly through our application form, or provide a link to your YouTube video. Choose the method that works best for you. Make sure your video clearly showcases your talent and is of good audio and visual quality.
+                  To submit your performance, go to the Apply page and tap on the application link. This will take you to our external application form where you can fill out all required information and submit your performance video. You can either upload a video file directly or provide a link to your YouTube video.
                 </AccordionContent>
               </AccordionItem>
 
@@ -66,20 +66,38 @@ export default function FaqsPage() {
                   What should my video include?
                 </AccordionTrigger>
                 <AccordionContent className="font-sans text-muted-foreground leading-relaxed">
-                  Your video should feature a complete performance that best represents your musical abilities. We recommend choosing a piece that highlights your strengths and showcases your unique artistry. The video should be clear, well-lit, and have good audio quality. There's no strict time limit, but we suggest keeping it between 3-10 minutes.
+                  Your video should feature a complete performance that best represents your musical abilities. We recommend choosing a piece that highlights your strengths and showcases your unique artistry. The video should be clear, well-lit, and have good audio quality. The time limit is around 2-4 minutes.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="item-6">
                 <AccordionTrigger className="font-sans text-left">
-                  When will winners be announced?
+                  What is the application deadline?
                 </AccordionTrigger>
                 <AccordionContent className="font-sans text-muted-foreground leading-relaxed">
-                  Winners will be notified via email after the judging period concludes. All applicants will receive updates about the competition timeline and results. Make sure to provide accurate contact information in your application.
+                  The application deadline is August 1st, 2026. Make sure to submit your application before this date to be considered for the competition.
                 </AccordionContent>
               </AccordionItem>
 
               <AccordionItem value="item-7">
+                <AccordionTrigger className="font-sans text-left">
+                  When will winners be announced?
+                </AccordionTrigger>
+                <AccordionContent className="font-sans text-muted-foreground leading-relaxed">
+                  Winners will be announced through email on September 1st, 2026. All applicants will receive updates about the competition results. Make sure to provide accurate contact information in your application.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-8">
+                <AccordionTrigger className="font-sans text-left">
+                  When is the performance?
+                </AccordionTrigger>
+                <AccordionContent className="font-sans text-muted-foreground leading-relaxed">
+                  The performance will be mid November in Times Square, New York City. The winner will perform at the Jane Elissa Extravaganza, sharing the stage with Broadway stars in one of the most iconic locations in the world.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-9">
                 <AccordionTrigger className="font-sans text-left">
                   What does the winner receive?
                 </AccordionTrigger>
@@ -88,44 +106,35 @@ export default function FaqsPage() {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-8">
+              <AccordionItem value="item-10">
                 <AccordionTrigger className="font-sans text-left">
                   How are applications judged?
                 </AccordionTrigger>
                 <AccordionContent className="font-sans text-muted-foreground leading-relaxed">
-                  Applications are reviewed by a panel of experienced music professionals and industry experts. They evaluate performances based on technical skill, artistic expression, stage presence, and overall impact. We're looking for performers who demonstrate exceptional talent and the potential to captivate an audience.
+                  Applications are reviewed by a panel of experienced music professionals and industry experts. Judging criteria include technical skill, artistic expression, stage presence, originality, and overall performance quality. All submissions are evaluated fairly and thoroughly.
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-9">
-                <AccordionTrigger className="font-sans text-left">
-                  Is the application fee refundable?
-                </AccordionTrigger>
-                <AccordionContent className="font-sans text-muted-foreground leading-relaxed">
-                  Application fees are non-refundable as they directly support leukemia and cancer research. By applying, you're making a meaningful contribution to life-saving medical research while pursuing your musical aspirations.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-10">
+              <AccordionItem value="item-11">
                 <AccordionTrigger className="font-sans text-left">
                   Can I submit multiple applications?
                 </AccordionTrigger>
                 <AccordionContent className="font-sans text-muted-foreground leading-relaxed">
-                  Yes, you may submit multiple applications if you wish to showcase different performances or musical styles. Each application requires a separate submission and application fee.
+                  Each applicant may submit one application per competition cycle. We encourage you to submit your strongest, most polished performance to maximize your chances of success.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-12">
+                <AccordionTrigger className="font-sans text-left">
+                  How does my application support cancer research?
+                </AccordionTrigger>
+                <AccordionContent className="font-sans text-muted-foreground leading-relaxed">
+                  100% of application fees are donated to leukemia and cancer research initiatives. By applying to The Luminary International Music Competition, you're directly contributing to life-saving medical research while pursuing your passion for music. Every application makes a difference.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
           </CardContent>
         </Card>
-
-        <div className="mt-12 text-center">
-          <p className="font-sans text-muted-foreground mb-4">
-            Still have questions? We're here to help.
-          </p>
-          <p className="font-sans text-sm text-muted-foreground">
-            For additional inquiries, please reach out through our contact channels.
-          </p>
-        </div>
       </div>
     </div>
   );

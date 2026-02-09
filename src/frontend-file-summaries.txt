@@ -3,15 +3,16 @@
   "frontend/tailwind.config.js": "Tailwind configuration extending theme with custom serif/sans font families, elegant shadow utilities, and refined border radius values for premium aesthetic.",
   "frontend/src/App.tsx": "Main application component with TanStack Router setup defining routes for Home, Apply, FAQs, and payment result pages using a shared Layout wrapper.",
   "frontend/src/components/Layout.tsx": "Root layout component wrapping all pages with persistent SiteHeader and SiteFooter, providing consistent navigation and structure.",
-  "frontend/src/components/SiteHeader.tsx": "Premium navigation header with competition logo, refined typography, and responsive navigation links to Home, Apply, and FAQs pages.",
-  "frontend/src/components/SiteFooter.tsx": "Formal footer with competition context, quick links, mission statement about cancer research funding, and caffeine.ai attribution with heart icon.",
-  "frontend/src/pages/HomePage.tsx": "Landing page featuring hero banner with Times Square/Broadway messaging, feature cards highlighting competition benefits, cause section about cancer research, and prominent CTAs to apply.",
-  "frontend/src/pages/FaqsPage.tsx": "FAQ page with accordion component displaying 10 comprehensive Q&A items about competition details, eligibility, submission requirements, judging, and cause impact.",
-  "frontend/src/pages/ApplyPage.tsx": "Application form page with login gate requiring authentication before submission, collecting personal information and video submission (YouTube link or file upload), validating inputs, and initiating 75 CAD Stripe payment flow with draft persistence.",
-  "frontend/src/pages/PaymentSuccessPage.tsx": "Payment success page that verifies Stripe session, finalizes application submission to backend, displays confirmation message, and clears session draft.",
+  "frontend/src/components/SiteHeader.tsx": "Navigation header with competition branding text only (logo image removed), featuring responsive navigation links for Home, Apply, and FAQs.",
+  "frontend/src/components/SiteFooter.tsx": "Formal footer with updated competition name and description clarifying that the winner performs at the Jane Elissa Extravaganza event in Times Square with Broadway stars.",
+  "frontend/src/pages/HomePage.tsx": "Landing page with gradient background hero section (no photograph), updated competition branding, and clear messaging about performing at the Jane Elissa Extravaganza in Times Square.",
+  "frontend/src/pages/FaqsPage.tsx": "FAQ page with accordion displaying comprehensive Q&A about The Luminary International Music Competition, including updated submission instructions (directing users to Apply page), 2-4 minute video time limit, August 1st 2026 deadline, September 1st 2026 winner announcement date, and mid November Times Square performance details.",
+  "frontend/src/pages/ApplyPage.tsx": "Simple application page with a single call-to-action button that opens the external JotForm application at https://pci.jotform.com/form/260387196671063 in a new tab.",
+  "frontend/src/pages/PaymentSuccessPage.tsx": "Payment success confirmation page with updated competition branding thanking users for applying to The Luminary International Music Competition and mentioning the Jane Elissa Extravaganza performance opportunity.",
   "frontend/src/pages/PaymentFailurePage.tsx": "Payment failure page informing users their payment was cancelled, preserving application draft, and offering options to retry or return home.",
   "frontend/src/hooks/useQueries.ts": "React Query hooks for checking Stripe configuration and finalizing application submission, now correctly using useInternetIdentity to get the caller's Principal instead of non-existent actor method.",
   "frontend/src/hooks/useCreateCheckoutSession.ts": "React Query mutation hook creating Stripe checkout sessions with proper JSON parsing, URL validation, and error handling for payment flow.",
   "frontend/src/main.tsx": "Application entry point that sets up React Query and Internet Identity providers with correct relative CSS import path.",
-  "frontend/src/index.css": "Global styles with prestigious charcoal/ivory/gold OKLCH color palette, Cormorant Garamond serif and Montserrat sans fonts, and subtle background pattern integration."
+  "frontend/src/index.css": "Global styles with prestigious charcoal/ivory/gold OKLCH color palette, Cormorant Garamond serif and Montserrat sans fonts, and subtle background pattern integration.",
+  "frontend/index.html": "HTML entry point with updated document title to \"The Luminary International Music Competition\"."
 }

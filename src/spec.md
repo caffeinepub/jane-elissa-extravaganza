@@ -1,15 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Build a professional, prestigious marketing website for the “Jane Elissa Extravaganza” music competition, including an application flow with video submission and a 75 CAD payment step, plus FAQs and cause/impact messaging.
+**Goal:** Update the FAQs page content to reflect the latest submission instructions, video time limit guidance, and the 2026 competition timeline.
 
 **Planned changes:**
-- Create a consistent premium visual theme (refined typography, formal layout, high-contrast palette with gold accents) across the site.
-- Add core pages with navigation: Home (clear prize messaging), Apply (form + payment step), FAQs (professional Q/A layout).
-- Implement the Apply form with required contact fields (full name, email) and video submission via either file upload or YouTube link (exactly one required), with success confirmation.
-- Persist submitted applications in the backend with contact info, submission method, video reference, timestamp, and payment status/details (non-sensitive reference).
-- Add a backend query to list applications (newest first) including key fields and payment status.
-- Add cause/impact messaging that application fees support leukemia and cancer research.
-- Add and use custom static brand images (logo/crest, hero/banner, background pattern) as frontend static assets.
+- Update the FAQ answer for “How do I submit my performance?” to instruct users to go to the Apply page, tap the external application link, and complete the form.
+- Update the FAQ answer for “What should my video include?” to state the suggested time limit is around 2–4 minutes (removing the previous 3–10 minutes guidance).
+- Add/adjust FAQ content to state: application deadline is August 1st, 2026; winners announced via email on September 1st, 2026; performance will be mid November in Times Square.
 
-**User-visible outcome:** Visitors can learn about the competition and prize, read FAQs, and apply by submitting their details and a video (upload or YouTube link) while completing a 75 CAD payment step; applicants see a clear submission confirmation.
+**User-visible outcome:** Visitors to the FAQs page see updated, accurate instructions for submitting an application, updated video length guidance, and the correct 2026 deadline/announcement/performance timeline in the existing accordion UI.

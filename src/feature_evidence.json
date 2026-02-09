@@ -2,58 +2,9 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-create-a-professional-prestigious-marketing-website-for-a-music-competition-for-the-jane-elissa-extravaganza-with-clear-messaging-that-the-winner-performs-at-an-annual-times-square-new-york-event-with-broadway-stars",
-      "featureTitle": "Create a professional, prestigious marketing website for a music competition for the “Jane Elissa Extravaganza” with clear messaging that the winner performs at an annual Times Square New York event with Broadway stars.",
+      "featureId": "feature-update-the-faqs-content-on-the-faqs-page-to-reflect-the-latest-submission-instructions-and-2026-competition-timeline-1-under-how-do-i-submit-my-performance-instruct-users-to-go-to-the-apply-page-tap-the-application-link-and-fill-out-the-external-form-2-under-what-should-my-video-include-update-the-suggested-time-limit-to-around-2-4-minutes-3-add-adjust-faq-content-to-state-the-application-deadline-is-august-1st-2026-winners-will-be-announced-via-email-on-september-1st-2026-and-the-performance-will-be-mid-november-in-times-square",
+      "featureTitle": "Update the FAQs content on the FAQs page to reflect the latest submission instructions and 2026 competition timeline: (1) Under “How do I submit my performance?”, instruct users to go to the Apply page, tap the application link, and fill out the external form. (2) Under “What should my video include?”, update the suggested time limit to around 2–4 minutes. (3) Add/adjust FAQ content to state the application deadline is August 1st, 2026; winners will be announced via email on September 1st, 2026; and the performance will be mid November in Times Square.",
       "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/SiteFooter.tsx",
-        "frontend/src/components/SiteHeader.tsx",
-        "frontend/src/pages/HomePage.tsx"
-      ],
-      "components": [
-        "blob-storage@4.0.0",
-        "stripe@3.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0",
-        "http-outcalls@3.0.0",
-        "authorization@4.0.0"
-      ],
-      "testIds": [
-        "REQ-1"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-implement-a-coherent-visual-theme-that-feels-super-professional-and-prestigious-e-g-refined-typography-high-contrast-palette-such-as-charcoal-ivory-with-gold-accents-generous-spacing-formal-layout-and-apply-it-consistently-across-all-pages",
-      "featureTitle": "Implement a coherent visual theme that feels “super professional and prestigious” (e.g., refined typography, high-contrast palette such as charcoal/ivory with gold accents, generous spacing, formal layout) and apply it consistently across all pages.",
-      "files": [
-        "frontend/index.css",
-        "frontend/tailwind.config.js"
-      ],
-      "components": [
-        "blob-storage@4.0.0",
-        "stripe@3.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0",
-        "http-outcalls@3.0.0",
-        "authorization@4.0.0"
-      ],
-      "testIds": [
-        "REQ-2"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-an-faqs-page-or-dedicated-faqs-section-accessible-from-navigation-containing-competition-related-frequently-asked-questions-and-answers",
-      "featureTitle": "Add an FAQs page (or dedicated FAQs section accessible from navigation) containing competition-related frequently asked questions and answers.",
-      "files": [
-        "frontend/src/App.tsx",
         "frontend/src/pages/FaqsPage.tsx"
       ],
       "components": [
@@ -68,103 +19,7 @@
         "authorization@4.0.0"
       ],
       "testIds": [
-        "REQ-3"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-an-apply-page-with-an-application-form-that-allows-an-applicant-to-either-a-upload-a-video-file-or-b-provide-a-youtube-video-link-plus-required-applicant-contact-fields",
-      "featureTitle": "Add an “Apply” page with an application form that allows an applicant to either (a) upload a video file or (b) provide a YouTube video link, plus required applicant contact fields.",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/pages/ApplyPage.tsx"
-      ],
-      "components": [
-        "blob-storage@4.0.0",
-        "stripe@3.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0",
-        "http-outcalls@3.0.0",
-        "authorization@4.0.0"
-      ],
-      "testIds": [
-        "REQ-4"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-collect-a-75-cad-application-fee-as-part-of-the-application-submission-flow-using-an-online-payment-step-and-store-the-resulting-payment-status-details-with-the-application-record",
-      "featureTitle": "Collect a 75 CAD application fee as part of the application submission flow using an online payment step, and store the resulting payment status/details with the application record.",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/hooks/useCreateCheckoutSession.ts",
-        "frontend/src/pages/ApplyPage.tsx",
-        "frontend/src/pages/PaymentFailurePage.tsx",
-        "frontend/src/pages/PaymentSuccessPage.tsx"
-      ],
-      "components": [
-        "blob-storage@4.0.0",
-        "stripe@3.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0",
-        "http-outcalls@3.0.0",
-        "authorization@4.0.0"
-      ],
-      "testIds": [
-        "REQ-5"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-cause-impact-messaging-stating-that-funds-raised-through-application-fees-go-towards-leukemia-and-cancer-research",
-      "featureTitle": "Add cause/impact messaging stating that funds raised through application fees go towards leukemia and cancer research.",
-      "files": [
-        "frontend/src/pages/ApplyPage.tsx",
-        "frontend/src/pages/HomePage.tsx"
-      ],
-      "components": [
-        "blob-storage@4.0.0",
-        "stripe@3.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0",
-        "http-outcalls@3.0.0",
-        "authorization@4.0.0"
-      ],
-      "testIds": [
-        "REQ-6"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-generate-and-include-a-small-set-of-custom-static-brand-images-that-reinforce-a-prestigious-competition-identity-and-use-them-in-the-ui-as-static-assets-not-served-via-the-backend",
-      "featureTitle": "Generate and include a small set of custom static brand images that reinforce a prestigious competition identity, and use them in the UI as static assets (not served via the backend).",
-      "files": [
-        "frontend/index.css",
-        "frontend/src/components/SiteHeader.tsx",
-        "frontend/src/pages/HomePage.tsx"
-      ],
-      "components": [
-        "blob-storage@4.0.0",
-        "stripe@3.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0",
-        "http-outcalls@3.0.0",
-        "authorization@4.0.0"
-      ],
-      "testIds": [
-        "REQ-8"
+        "REQ-15"
       ],
       "confidence": "high"
     }

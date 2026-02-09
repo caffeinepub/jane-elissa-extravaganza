@@ -1,250 +1,34 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-08T22:20:50.531Z",
+  "generatedAt": "2026-02-09T00:51:26.306Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 8,
-    "implemented": 7,
+    "total": 1,
+    "implemented": 1,
     "items": [
       {
-        "id": "REQ-1",
-        "summary": "Create a professional, prestigious marketing website for a music competition for the “Jane Elissa Extravaganza” with clear messaging that the winner performs at an annual Times Square New York event with Broadway stars.",
+        "id": "REQ-15",
+        "summary": "Update the FAQs content on the FAQs page to reflect the latest submission instructions and 2026 competition timeline: (1) Under “How do I submit my performance?”, instruct users to go to the Apply page, tap the application link, and fill out the external form. (2) Under “What should my video include?”, update the suggested time limit to around 2–4 minutes. (3) Add/adjust FAQ content to state the application deadline is August 1st, 2026; winners will be announced via email on September 1st, 2026; and the performance will be mid November in Times Square.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/App.tsx",
-          "frontend/src/components/SiteHeader.tsx",
-          "frontend/src/components/SiteFooter.tsx",
-          "frontend/src/pages/HomePage.tsx"
+          "frontend/src/pages/FaqsPage.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/App.tsx",
-          "frontend/src/components/SiteHeader.tsx",
-          "frontend/src/components/SiteFooter.tsx",
-          "frontend/src/pages/HomePage.tsx"
-        ]
-      },
-      {
-        "id": "REQ-2",
-        "summary": "Implement a coherent visual theme that feels “super professional and prestigious” (e.g., refined typography, high-contrast palette such as charcoal/ivory with gold accents, generous spacing, formal layout) and apply it consistently across all pages.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/index.css",
-          "frontend/tailwind.config.js",
-          "frontend/src/components/PageLayout.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/index.css",
-          "frontend/tailwind.config.js"
-        ]
-      },
-      {
-        "id": "REQ-3",
-        "summary": "Add an FAQs page (or dedicated FAQs section accessible from navigation) containing competition-related frequently asked questions and answers.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/pages/FaqsPage.tsx",
-          "frontend/src/App.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/pages/FaqsPage.tsx",
-          "frontend/src/App.tsx"
-        ]
-      },
-      {
-        "id": "REQ-4",
-        "summary": "Add an “Apply” page with an application form that allows an applicant to either (a) upload a video file or (b) provide a YouTube video link, plus required applicant contact fields.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/pages/ApplyPage.tsx",
-          "frontend/src/hooks/useSubmitApplication.ts",
-          "frontend/src/lib/applicationDraft.ts",
-          "frontend/src/App.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/pages/ApplyPage.tsx",
-          "frontend/src/App.tsx"
-        ]
-      },
-      {
-        "id": "REQ-5",
-        "summary": "Collect a 75 CAD application fee as part of the application submission flow using an online payment step, and store the resulting payment status/details with the application record.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/hooks/useCreateCheckoutSession.ts",
-          "frontend/src/components/PaymentSetupGate.tsx",
-          "frontend/src/pages/PaymentSuccessPage.tsx",
-          "frontend/src/pages/PaymentFailurePage.tsx",
-          "frontend/src/pages/ApplyPage.tsx",
-          "frontend/src/App.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/hooks/useCreateCheckoutSession.ts",
-          "frontend/src/pages/PaymentSuccessPage.tsx",
-          "frontend/src/pages/PaymentFailurePage.tsx",
-          "frontend/src/pages/ApplyPage.tsx",
-          "frontend/src/App.tsx"
-        ]
-      },
-      {
-        "id": "REQ-6",
-        "summary": "Add cause/impact messaging stating that funds raised through application fees go towards leukemia and cancer research.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/pages/HomePage.tsx",
-          "frontend/src/pages/ApplyPage.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/pages/HomePage.tsx",
-          "frontend/src/pages/ApplyPage.tsx"
-        ]
-      },
-      {
-        "id": "REQ-7",
-        "summary": "Provide a backend query suitable for an internal/admin view to list submitted applications (most recent first), including key fields and payment status.",
-        "status": "unknown",
-        "plannedFiles": [],
-        "matchedFiles": []
-      },
-      {
-        "id": "REQ-8",
-        "summary": "Generate and include a small set of custom static brand images that reinforce a prestigious competition identity, and use them in the UI as static assets (not served via the backend).",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/public/assets/generated/competition-crest-logo.dim_512x512.png",
-          "frontend/public/assets/generated/hero-banner.dim_1920x800.png",
-          "frontend/public/assets/generated/background-pattern-tile.dim_512x512.png",
-          "frontend/src/components/SiteHeader.tsx",
-          "frontend/src/pages/HomePage.tsx",
-          "frontend/index.css"
-        ],
-        "matchedFiles": [
-          "frontend/public/assets/generated/competition-crest-logo.dim_512x512.png",
-          "frontend/public/assets/generated/hero-banner.dim_1920x800.png",
-          "frontend/public/assets/generated/background-pattern-tile.dim_512x512.png",
-          "frontend/src/components/SiteHeader.tsx",
-          "frontend/src/pages/HomePage.tsx",
-          "frontend/index.css"
+          "frontend/src/pages/FaqsPage.tsx"
         ]
       }
     ]
   },
   "changedFiles": [
-    "backend/authorization/MixinAuthorization.mo",
-    "backend/authorization/access-control.mo",
-    "backend/blob-storage/Mixin.mo",
-    "backend/blob-storage/Storage.mo",
-    "backend/http-outcalls/outcall.mo",
-    "backend/main.mo",
-    "backend/stripe/stripe.mo",
     "build-request.json",
-    "build-template/Dockerfile",
-    "build-template/LICENSE",
-    "build-template/README.md",
-    "build-template/deploy.sh",
-    "build-template/icp.yaml",
-    "build-template/package.json",
-    "build-template/pnpm-lock.yaml",
-    "build-template/pnpm-workspace.yaml",
-    "build-template/scripts/prune-unused-images.js",
-    "build-template/scripts/resize-images.js",
-    "build-template/src/backend/canister.yaml",
-    "build-template/src/backend/system-idl/aaaaa-aa.did",
-    "build-template/src/frontend/canister.yaml",
-    "build-template/src/frontend/components.json",
-    "build-template/src/frontend/env.json",
-    "build-template/src/frontend/eslint-rules/no-bigint-in-query-keys.js",
-    "build-template/src/frontend/eslint-rules/require-internet-identity-provider.js",
-    "build-template/src/frontend/eslint.config.js",
-    "build-template/src/frontend/package.json",
-    "build-template/src/frontend/postcss.config.js",
-    "build-template/src/frontend/src/components/ui/accordion.tsx",
-    "build-template/src/frontend/src/components/ui/alert-dialog.tsx",
-    "build-template/src/frontend/src/components/ui/alert.tsx",
-    "build-template/src/frontend/src/components/ui/aspect-ratio.tsx",
-    "build-template/src/frontend/src/components/ui/avatar.tsx",
-    "build-template/src/frontend/src/components/ui/badge.tsx",
-    "build-template/src/frontend/src/components/ui/breadcrumb.tsx",
-    "build-template/src/frontend/src/components/ui/button.tsx",
-    "build-template/src/frontend/src/components/ui/calendar.tsx",
-    "build-template/src/frontend/src/components/ui/card.tsx",
-    "build-template/src/frontend/src/components/ui/carousel.tsx",
-    "build-template/src/frontend/src/components/ui/chart.tsx",
-    "build-template/src/frontend/src/components/ui/checkbox.tsx",
-    "build-template/src/frontend/src/components/ui/collapsible.tsx",
-    "build-template/src/frontend/src/components/ui/command.tsx",
-    "build-template/src/frontend/src/components/ui/context-menu.tsx",
-    "build-template/src/frontend/src/components/ui/dialog.tsx",
-    "build-template/src/frontend/src/components/ui/drawer.tsx",
-    "build-template/src/frontend/src/components/ui/dropdown-menu.tsx",
-    "build-template/src/frontend/src/components/ui/form.tsx",
-    "build-template/src/frontend/src/components/ui/hover-card.tsx",
-    "build-template/src/frontend/src/components/ui/input-otp.tsx",
-    "build-template/src/frontend/src/components/ui/input.tsx",
-    "build-template/src/frontend/src/components/ui/label.tsx",
-    "build-template/src/frontend/src/components/ui/menubar.tsx",
-    "build-template/src/frontend/src/components/ui/navigation-menu.tsx",
-    "build-template/src/frontend/src/components/ui/pagination.tsx",
-    "build-template/src/frontend/src/components/ui/popover.tsx",
-    "build-template/src/frontend/src/components/ui/progress.tsx",
-    "build-template/src/frontend/src/components/ui/radio-group.tsx",
-    "build-template/src/frontend/src/components/ui/resizable.tsx",
-    "build-template/src/frontend/src/components/ui/scroll-area.tsx",
-    "build-template/src/frontend/src/components/ui/select.tsx",
-    "build-template/src/frontend/src/components/ui/separator.tsx",
-    "build-template/src/frontend/src/components/ui/sheet.tsx",
-    "build-template/src/frontend/src/components/ui/sidebar.tsx",
-    "build-template/src/frontend/src/components/ui/skeleton.tsx",
-    "build-template/src/frontend/src/components/ui/slider.tsx",
-    "build-template/src/frontend/src/components/ui/sonner.tsx",
-    "build-template/src/frontend/src/components/ui/switch.tsx",
-    "build-template/src/frontend/src/components/ui/table.tsx",
-    "build-template/src/frontend/src/components/ui/tabs.tsx",
-    "build-template/src/frontend/src/components/ui/textarea.tsx",
-    "build-template/src/frontend/src/components/ui/toggle-group.tsx",
-    "build-template/src/frontend/src/components/ui/toggle.tsx",
-    "build-template/src/frontend/src/components/ui/tooltip.tsx",
-    "build-template/src/frontend/src/hooks/use-mobile.tsx",
-    "build-template/src/frontend/src/lib/utils.ts",
-    "build-template/src/frontend/tsconfig.json",
-    "build-template/src/frontend/vite.config.js",
-    "build-template/tsconfig.json",
-    "caffeine.lock.json",
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/index.css",
-    "frontend/index.html",
-    "frontend/public/assets/generated/background-pattern-tile.dim_512x512.png",
-    "frontend/public/assets/generated/competition-crest-logo.dim_512x512.png",
-    "frontend/public/assets/generated/hero-banner.dim_1920x800.png",
-    "frontend/src/App.tsx",
-    "frontend/src/backend.d.ts",
-    "frontend/src/backend.ts",
-    "frontend/src/components/Layout.tsx",
-    "frontend/src/components/SiteFooter.tsx",
-    "frontend/src/components/SiteHeader.tsx",
-    "frontend/src/config.ts",
-    "frontend/src/declarations/backend.did.d.ts",
-    "frontend/src/declarations/backend.did.js",
-    "frontend/src/hooks/useActor.ts",
-    "frontend/src/hooks/useCreateCheckoutSession.ts",
-    "frontend/src/hooks/useInternetIdentity.ts",
-    "frontend/src/hooks/useQueries.ts",
-    "frontend/src/index.css",
-    "frontend/src/main.tsx",
-    "frontend/src/pages/ApplyPage.tsx",
     "frontend/src/pages/FaqsPage.tsx",
-    "frontend/src/pages/HomePage.tsx",
-    "frontend/src/pages/PaymentFailurePage.tsx",
-    "frontend/src/pages/PaymentSuccessPage.tsx",
-    "frontend/src/ui-summary.json",
-    "frontend/src/utils/StorageClient.ts",
-    "frontend/src/utils/urlParams.ts",
-    "frontend/tailwind.config.js",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

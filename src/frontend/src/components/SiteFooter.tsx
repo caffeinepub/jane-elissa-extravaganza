@@ -7,9 +7,9 @@ export default function SiteFooter() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="font-serif text-lg font-semibold mb-3">Jane Elissa Extravaganza</h3>
+            <h3 className="font-serif text-lg font-semibold mb-3">The Luminary International Music Competition</h3>
             <p className="font-sans text-sm text-muted-foreground leading-relaxed">
-              A prestigious music competition where the winner performs at our annual Times Square event with Broadway stars.
+              A prestigious music competition where the winner performs at the annual Jane Elissa Extravaganza in Times Square, New York City, with Broadway stars.
             </p>
           </div>
           

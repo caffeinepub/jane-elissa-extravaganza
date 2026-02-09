@@ -7,26 +7,17 @@ export default function HomePage() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src="/assets/generated/hero-banner.dim_1920x800.png" 
-            alt="Jane Elissa Extravaganza" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background"></div>
-        </div>
-        
+      <section className="relative overflow-hidden bg-gradient-to-br from-background via-accent/5 to-background">
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-40">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
-              Jane Elissa Extravaganza
+              The Luminary International Music Competition
             </h1>
             <p className="font-serif text-xl md:text-2xl text-foreground/90 italic">
-              Music Competition
+              Illuminate Your Talent on the World Stage
             </p>
             <p className="font-sans text-lg md:text-xl text-foreground/80 leading-relaxed max-w-2xl mx-auto">
-              Showcase your talent on one of the world's most iconic stages. The winner performs at our annual Times Square event in New York City alongside celebrated Broadway stars.
+              Showcase your talent on one of the world's most iconic stages. The winner performs at the annual Jane Elissa Extravaganza in Times Square, New York City, alongside celebrated Broadway stars.
             </p>
             <div className="pt-4">
               <Link to="/apply">
@@ -62,7 +53,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-serif text-xl font-semibold">Broadway Stars</h3>
                 <p className="font-sans text-sm text-muted-foreground leading-relaxed">
-                  Share the stage with celebrated Broadway performers at this annual extravaganza.
+                  Share the stage with celebrated Broadway performers at the Jane Elissa Extravaganza.
                 </p>
               </CardContent>
             </Card>
@@ -91,7 +82,7 @@ export default function HomePage() {
             </div>
             <h2 className="font-serif text-3xl md:text-4xl font-bold">Supporting Life-Saving Research</h2>
             <p className="font-sans text-lg text-muted-foreground leading-relaxed">
-              Every application fee contributes directly to leukemia and cancer research. By applying to the Jane Elissa Extravaganza, you're not only pursuing your musical dreams—you're helping fund critical research that saves lives.
+              Every application fee contributes directly to leukemia and cancer research. By applying to The Luminary International Music Competition, you're not only pursuing your musical dreams—you're helping fund critical research that saves lives.
             </p>
             <p className="font-sans text-base text-muted-foreground">
               Application fee: <span className="font-semibold text-accent">75 CAD</span>
@@ -106,7 +97,7 @@ export default function HomePage() {
           <div className="max-w-2xl mx-auto text-center space-y-6">
             <h2 className="font-serif text-3xl md:text-4xl font-bold">Ready to Apply?</h2>
             <p className="font-sans text-lg text-muted-foreground leading-relaxed">
-              Submit your video performance and take the first step toward performing at Times Square with Broadway stars.
+              Submit your video performance and take the first step toward performing at the Jane Elissa Extravaganza in Times Square with Broadway stars.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Link to="/apply">
@@ -126,4 +117,3 @@ export default function HomePage() {
     </div>
   );
 }
-

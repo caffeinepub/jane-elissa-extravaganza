@@ -1,167 +1,50 @@
 {
   "kind": "build_request",
-  "title": "Prestigious music competition website with application flow, video submission, payment, and FAQs",
+  "title": "Update FAQs with new submission instructions, video time limit, and 2026 timeline",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-1",
-      "text": "Create a professional, prestigious marketing website for a music competition for the “Jane Elissa Extravaganza” with clear messaging that the winner performs at an annual Times Square New York event with Broadway stars.",
+      "id": "REQ-15",
+      "text": "Update the FAQs content on the FAQs page to reflect the latest submission instructions and 2026 competition timeline: (1) Under “How do I submit my performance?”, instruct users to go to the Apply page, tap the application link, and fill out the external form. (2) Under “What should my video include?”, update the suggested time limit to around 2–4 minutes. (3) Add/adjust FAQ content to state the application deadline is August 1st, 2026; winners will be announced via email on September 1st, 2026; and the performance will be mid November in Times Square.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-1"
         ],
         "quotes": [
-          "Website for a music competition. Needs website to look super professional and prestigious. Winner gets to perform at the Jane Elissa Extravaganza - an annual performance in Times Square New York with Broadway Stars."
+          "IN faqs under how do i submit my performance. Tell them to go to apply and then tap on the link and fill out the form.\n\nUnder what should my video include the time limit is around 2-4 minutes\n\nDeadline is August 1st, 2026.\nWinners will be announced through email September 1st, 2026.\n\nPerformance will be mid November in Times Square."
         ]
       },
       "acceptanceCriteria": [
-        "Site has a clear home/landing page that states the competition purpose and the winner prize (performance at the Jane Elissa Extravaganza in Times Square NYC with Broadway stars).",
-        "Navigation provides access to at least: Home, Apply, FAQs.",
-        "All user-facing text is in English."
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "text": "Implement a coherent visual theme that feels “super professional and prestigious” (e.g., refined typography, high-contrast palette such as charcoal/ivory with gold accents, generous spacing, formal layout) and apply it consistently across all pages.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "Needs website to look super professional and prestigious."
-        ]
-      },
-      "acceptanceCriteria": [
-        "A single consistent theme is applied across pages (typography, colors, buttons, forms, and section styling).",
-        "The design avoids casual/“startup” styling and instead uses a formal, premium look."
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "text": "Add an FAQs page (or dedicated FAQs section accessible from navigation) containing competition-related frequently asked questions and answers.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "also have FAQs."
-        ]
-      },
-      "acceptanceCriteria": [
-        "FAQs are accessible from the main navigation.",
-        "FAQs are displayed in a readable, professional format (e.g., accordion or clearly separated Q/A blocks)."
-      ]
-    },
-    {
-      "id": "REQ-4",
-      "text": "Add an “Apply” page with an application form that allows an applicant to either (a) upload a video file or (b) provide a YouTube video link, plus required applicant contact fields.",
-      "target": "both",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "Have a page for application. You have to submit a video or a link to a YouTube video"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Application form includes applicant contact fields (at minimum: full name and email) and a video submission section with two options: upload a file OR paste a YouTube link.",
-        "Form validation enforces that exactly one video submission method is provided (upload OR YouTube link).",
-        "On successful submission, the user sees a clear success confirmation.",
-        "Backend persists submitted applications (including contact info, submission method, and timestamp) so they can be retrieved later."
-      ]
-    },
-    {
-      "id": "REQ-5",
-      "text": "Collect a 75 CAD application fee as part of the application submission flow using an online payment step, and store the resulting payment status/details with the application record.",
-      "target": "both",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "and pay 75 CAD."
-        ]
-      },
-      "acceptanceCriteria": [
-        "The Apply flow clearly indicates the fee amount as 75 CAD before payment.",
-        "Users can complete an online payment step and then submit (or finalize) the application.",
-        "Backend stores a payment status for each application (e.g., pending/paid) along with any non-sensitive payment reference returned to the app.",
-        "Users cannot finalize an application as “paid/complete” without going through the payment step (per the app’s implemented payment flow)."
-      ]
-    },
-    {
-      "id": "REQ-6",
-      "text": "Add cause/impact messaging stating that funds raised through application fees go towards leukemia and cancer research.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "funds raised through application fees will go towards leukemia and cancer research."
-        ]
-      },
-      "acceptanceCriteria": [
-        "Cause/impact messaging appears on the site in at least one prominent location (e.g., Home page and/or Apply page).",
-        "Wording clearly states that application fees support leukemia and cancer research."
-      ]
-    },
-    {
-      "id": "REQ-7",
-      "text": "Provide a backend query suitable for an internal/admin view to list submitted applications (most recent first), including key fields and payment status.",
-      "target": "backend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "Have a page for application...submit a video...pay 75 CAD."
-        ]
-      },
-      "acceptanceCriteria": [
-        "There is a backend method that returns a list of application records including: name, email, submission type, video reference (file metadata or YouTube URL), created timestamp, and payment status.",
-        "Results are ordered with newest applications first."
-      ]
-    },
-    {
-      "id": "REQ-8",
-      "text": "Generate and include a small set of custom static brand images that reinforce a prestigious competition identity, and use them in the UI as static assets (not served via the backend).",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "Needs website to look super professional and prestigious."
-        ]
-      },
-      "acceptanceCriteria": [
-        "Generated images are added under frontend/public/assets/generated and referenced directly by the frontend.",
-        "At least a logo/crest and a hero/background visual are visibly used in the site UI."
+        "In frontend/src/pages/FaqsPage.tsx, the answer for “How do I submit my performance?” explicitly tells users to go to the Apply page and use the external link to fill out the form.",
+        "In frontend/src/pages/FaqsPage.tsx, the “What should my video include?” answer states the time limit is around 2–4 minutes (and no longer suggests 3–10 minutes).",
+        "The FAQs page includes the application deadline as August 1st, 2026.",
+        "The FAQs page states winners will be announced via email on September 1st, 2026.",
+        "The FAQs page states the performance will be mid November in Times Square.",
+        "All updated FAQ user-facing text is in English and renders correctly in the accordion UI."
       ]
     }
   ],
   "constraints": [
-    "Use the existing React + TypeScript + Tailwind + shadcn/ui + React Query stack on the frontend.",
-    "Backend must remain a single Motoko actor (no additional backend services).",
-    "Do not modify files under frontend/src/components/ui or other immutable paths; compose them from app code instead.",
-    "No third-party authentication providers; only Internet Identity is allowed if authentication is needed (not required by this request)."
+    "Do not edit any files under frontend/src/components/ui (Shadcn UI components are read-only).",
+    "Do not modify files listed as immutable in SYSTEM_CONTEXT (compose them instead of editing)."
   ],
   "nonGoals": [
-    "Admin authentication/role management for viewing submissions (not requested).",
-    "Automated verification of payment with a secret server-side Stripe integration (not requested explicitly; implement the best possible online payment step within platform constraints).",
-    "Public directory of applicants or public voting features (not requested)."
+    "Changing the Apply page behavior or URL (it must remain an external link to https://pci.jotform.com/form/260387196671063).",
+    "Adding new backend functionality or changing backend data models for this request."
   ],
   "imageRequirements": {
-    "required": [
-      "Minimalist crest-style logo mark with elegant typography feel (competition-crest-logo.dim_512x512.png)",
-      "Wide cinematic hero banner with abstract stage lights / concert hall ambience, dark luxurious palette (hero-banner.dim_1920x800.png)",
-      "Subtle repeating background pattern (e.g., faint laurel/notes motif), seamless tile (background-pattern-tile.dim_512x512.png)"
-    ],
+    "required": [],
     "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
   }
 }

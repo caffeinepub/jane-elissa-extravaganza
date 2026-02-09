@@ -1,5 +1,4 @@
 import { Link, useRouterState } from '@tanstack/react-router';
-import { Music } from 'lucide-react';
 
 export default function SiteHeader() {
   const router = useRouterState();
@@ -11,18 +10,13 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          <Link to="/" className="flex items-center space-x-3 group">
-            <img 
-              src="/assets/generated/competition-crest-logo.dim_512x512.png" 
-              alt="Jane Elissa Extravaganza" 
-              className="h-12 w-12 object-contain transition-transform group-hover:scale-105"
-            />
+          <Link to="/" className="flex items-center group">
             <div className="flex flex-col">
               <span className="font-serif text-xl font-semibold tracking-tight text-foreground">
-                Jane Elissa Extravaganza
+                The Luminary
               </span>
               <span className="font-sans text-xs uppercase tracking-wider text-muted-foreground">
-                Music Competition
+                International Music Competition
               </span>
             </div>
           </Link>
@@ -97,4 +91,3 @@ export default function SiteHeader() {
     </header>
   );
 }
-

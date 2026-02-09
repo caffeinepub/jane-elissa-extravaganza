@@ -1,215 +1,24 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Jane Elissa Extravaganza — Prestigious competition marketing + application & payment flow",
+  "title": "Update FAQs submission instructions, video time limit, and 2026 timeline",
   "requirements": [
     {
-      "id": "REQ-1",
-      "summary": "Create a prestigious marketing site with clear prize messaging and navigation to Home, Apply, and FAQs.",
+      "id": "REQ-15",
+      "summary": "Revise FAQs page content to reflect updated submission flow, 2–4 minute video guidance, and 2026 deadline/announcement/performance timeline.",
       "acceptanceCriteria": [
-        "Site has a clear home/landing page that states the competition purpose and the winner prize (performance at the Jane Elissa Extravaganza in Times Square NYC with Broadway stars).",
-        "Navigation provides access to at least: Home, Apply, FAQs.",
-        "All user-facing text is in English."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "create",
-          "description": "Create the app shell and route wiring for Home, Apply, FAQs, and payment result pages; include a persistent top navigation and footer; ensure key messaging about the Times Square NYC/Broadway prize is present on the Home route."
-        },
-        {
-          "path": "frontend/src/components/SiteHeader.tsx",
-          "operation": "create",
-          "description": "Implement a premium header with logo/wordmark, refined navigation links (Home, Apply, FAQs), and responsive layout. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/components/SiteFooter.tsx",
-          "operation": "create",
-          "description": "Create a formal footer with brief competition context and links to Apply/FAQs; keep copy English-only."
-        },
-        {
-          "path": "frontend/src/pages/HomePage.tsx",
-          "operation": "create",
-          "description": "Build the Home/Landing page content: competition positioning, the winner prize statement (Times Square NYC event with Broadway stars), and CTA(s) to Apply; incorporate hero branding assets. Verify the component's usage instructions before implementing."
-        }
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "summary": "Implement a consistent, formal premium theme (charcoal/ivory with gold accents, refined typography, generous spacing) across all pages and components.",
-      "acceptanceCriteria": [
-        "A single consistent theme is applied across pages (typography, colors, buttons, forms, and section styling).",
-        "The design avoids casual/“startup” styling and instead uses a formal, premium look."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/index.css",
-          "operation": "modify",
-          "description": "Adjust global CSS variables and base styles to a prestigious charcoal/ivory palette with gold accent tokens; set typographic defaults and form/button styling consistency via Tailwind/shadcn tokens."
-        },
-        {
-          "path": "frontend/tailwind.config.js",
-          "operation": "modify",
-          "description": "Extend Tailwind theme (e.g., fontFamily, additional color aliases if needed) to support the premium design system and ensure consistent spacing/typography utilities across pages."
-        },
-        {
-          "path": "frontend/src/components/PageLayout.tsx",
-          "operation": "create",
-          "description": "Create a shared layout wrapper for consistent page gutters, section spacing, and background styling; used by Home, Apply, and FAQs pages."
-        }
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "summary": "Add an FAQs page accessible from navigation with readable, professional Q/A presentation.",
-      "acceptanceCriteria": [
-        "FAQs are accessible from the main navigation.",
-        "FAQs are displayed in a readable, professional format (e.g., accordion or clearly separated Q/A blocks)."
+        "In frontend/src/pages/FaqsPage.tsx, the answer for “How do I submit my performance?” explicitly tells users to go to the Apply page and use the external link to fill out the form.",
+        "In frontend/src/pages/FaqsPage.tsx, the “What should my video include?” answer states the time limit is around 2–4 minutes (and no longer suggests 3–10 minutes).",
+        "The FAQs page includes the application deadline as August 1st, 2026.",
+        "The FAQs page states winners will be announced via email on September 1st, 2026.",
+        "The FAQs page states the performance will be mid November in Times Square.",
+        "All updated FAQ user-facing text is in English and renders correctly in the accordion UI."
       ],
       "file_operations": [
         {
           "path": "frontend/src/pages/FaqsPage.tsx",
-          "operation": "create",
-          "description": "Implement FAQs page with curated competition Q/A content rendered in a professional format (use shadcn/ui Accordion for expandable answers). Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Wire the FAQs page into routing and ensure the header navigation includes an FAQs link."
-        }
-      ]
-    },
-    {
-      "id": "REQ-4",
-      "summary": "Create an Apply page with validated application form supporting either video upload or YouTube link and required contact fields, with a clear submission success confirmation.",
-      "acceptanceCriteria": [
-        "Application form includes applicant contact fields (at minimum: full name and email) and a video submission section with two options: upload a file OR paste a YouTube link.",
-        "Form validation enforces that exactly one video submission method is provided (upload OR YouTube link).",
-        "On successful submission, the user sees a clear success confirmation.",
-        "Backend persists submitted applications (including contact info, submission method, and timestamp) so they can be retrieved later."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/pages/ApplyPage.tsx",
-          "operation": "create",
-          "description": "Build the Apply page and multi-step form UI (contact fields + video submission choice). Use shadcn/ui form primitives (Input, Label, Button, Card) and ensure validation enforces exactly one video method. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/hooks/useSubmitApplication.ts",
-          "operation": "create",
-          "description": "Create a React Query mutation hook that submits an application via the backend actor (submitApplication) and handles success/error states for the Apply flow."
-        },
-        {
-          "path": "frontend/src/lib/applicationDraft.ts",
-          "operation": "create",
-          "description": "Add helpers to build/validate a draft application object (including timestamp and generated id), store/retrieve it from sessionStorage during the payment redirect round-trip, and ensure only one of upload or YouTube link is present."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Wire the Apply page route and add navigation link to Apply in the header."
-        }
-      ]
-    },
-    {
-      "id": "REQ-5",
-      "summary": "Add a 75 CAD online payment step to the Apply flow and prevent finalization as paid/complete without completing the payment step.",
-      "acceptanceCriteria": [
-        "The Apply flow clearly indicates the fee amount as 75 CAD before payment.",
-        "Users can complete an online payment step and then submit (or finalize) the application.",
-        "Backend stores a payment status for each application (e.g., pending/paid) along with any non-sensitive payment reference returned to the app.",
-        "Users cannot finalize an application as “paid/complete” without going through the payment step (per the app’s implemented payment flow)."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/hooks/useCreateCheckoutSession.ts",
-          "operation": "create",
-          "description": "Implement Stripe checkout session creation using React Query and backend actor createCheckoutSession; JSON-parse the response and require a non-empty url before redirecting. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/components/PaymentSetupGate.tsx",
-          "operation": "create",
-          "description": "Add a lightweight gate that checks isStripeConfigured() and shows a clear non-technical message if payments are not configured (e.g., instruct applicant to try later/contact organizers) so the Apply flow fails gracefully. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/pages/PaymentSuccessPage.tsx",
-          "operation": "create",
-          "description": "Implement a payment success route that reads Stripe session identifiers from the URL, calls getStripeSessionStatus, and then finalizes the stored application draft as paid/complete (including persisting a non-sensitive reference) before showing a confirmation. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/pages/PaymentFailurePage.tsx",
-          "operation": "create",
-          "description": "Implement a payment failure route that communicates the failure, preserves the application draft state, and offers a route back to retry payment from Apply. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/pages/ApplyPage.tsx",
-          "operation": "modify",
-          "description": "Integrate the payment step: show the 75 CAD fee prominently, create ShoppingItem data for the fee, redirect to Stripe via window.location.href, and only allow final submission once payment has returned as completed; persist draft state across redirect."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Register /payment-success and /payment-failure routes and ensure navigation/back links behave correctly after Stripe redirect."
-        }
-      ]
-    },
-    {
-      "id": "REQ-6",
-      "summary": "Add cause/impact messaging that application fees support leukemia and cancer research.",
-      "acceptanceCriteria": [
-        "Cause/impact messaging appears on the site in at least one prominent location (e.g., Home page and/or Apply page).",
-        "Wording clearly states that application fees support leukemia and cancer research."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/pages/HomePage.tsx",
-          "operation": "modify",
-          "description": "Add a prominent cause/impact section stating that funds raised through application fees go towards leukemia and cancer research (English-only)."
-        },
-        {
-          "path": "frontend/src/pages/ApplyPage.tsx",
-          "operation": "modify",
-          "description": "Add concise cause/impact messaging near the fee disclosure (75 CAD) to reinforce that application fees support leukemia and cancer research."
-        }
-      ]
-    },
-    {
-      "id": "REQ-8",
-      "summary": "Include generated static brand images (crest/logo, hero banner, subtle background pattern) and use them directly as frontend assets.",
-      "acceptanceCriteria": [
-        "Generated images are added under frontend/public/assets/generated and referenced directly by the frontend.",
-        "At least a logo/crest and a hero/background visual are visibly used in the site UI."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/public/assets/generated/competition-crest-logo.dim_512x512.png",
-          "operation": "create",
-          "description": "Add the generated crest/logo image asset at frontend/public/assets/generated/competition-crest-logo.dim_512x512.png and ensure it is used in the header/branding."
-        },
-        {
-          "path": "frontend/public/assets/generated/hero-banner.dim_1920x800.png",
-          "operation": "create",
-          "description": "Add the generated hero banner image asset at frontend/public/assets/generated/hero-banner.dim_1920x800.png and ensure it is used prominently on the Home page hero section."
-        },
-        {
-          "path": "frontend/public/assets/generated/background-pattern-tile.dim_512x512.png",
-          "operation": "create",
-          "description": "Add the generated background tile asset at frontend/public/assets/generated/background-pattern-tile.dim_512x512.png and apply it subtly (e.g., as a site-wide background pattern) without reducing text readability."
-        },
-        {
-          "path": "frontend/src/components/SiteHeader.tsx",
-          "operation": "modify",
-          "description": "Reference frontend/public/assets/generated/competition-crest-logo.dim_512x512.png in the header branding (static asset usage, not via backend). Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/pages/HomePage.tsx",
-          "operation": "modify",
-          "description": "Reference frontend/public/assets/generated/hero-banner.dim_1920x800.png in the hero presentation and ensure it supports a prestigious look. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/index.css",
-          "operation": "modify",
-          "description": "Reference frontend/public/assets/generated/background-pattern-tile.dim_512x512.png for a subtle repeating background pattern via global styling (ensure contrast and legibility)."
+          "description": "Update accordion answer copy: (1) change “How do I submit my performance?” to instruct users to go to the Apply page, tap the external application link, and fill out the external form; (2) update “What should my video include?” to recommend around 2–4 minutes (removing the 3–10 minutes guidance); (3) add/adjust FAQ content to explicitly state the application deadline (August 1st, 2026), winner email announcement date (September 1st, 2026), and that the performance will be mid November in Times Square—without modifying any files under frontend/src/components/ui."
         }
       ]
     }

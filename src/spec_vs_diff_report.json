@@ -1,60 +1,46 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-08T22:20:50.528Z",
-  "summary": "Most requested marketing site and application/payment flow appear implemented: Home/Apply/FAQs navigation, prestigious theme, FAQ accordion, static generated brand images usage, Stripe checkout with success/failure pages, and backend application persistence with an admin-oriented listing method. However, the diff introduces explicit admin/access-control and user-profile features that were not requested (and were called out as non-goals). Some backend acceptance criteria (newest-first ordering in the admin list) cannot be fully verified due to backend truncation.",
+  "generatedAt": "2026-02-09T00:51:26.304Z",
+  "summary": "REQ-15 appears partially implemented: the “How do I submit my performance?” FAQ answer is updated as requested. However, due to truncation of frontend/src/pages/FaqsPage.tsx in the diff summary, the updated “What should my video include?” time limit and the specific 2026 timeline statements cannot be conclusively verified from the provided evidence.",
   "missing_requirements": [
     {
-      "id": "REQ-7",
-      "requirement": "Backend admin query lists submitted applications (most recent first), including key fields and payment status.",
-      "reason": "A getAllApplications method exists but the diff is truncated before showing that results are actually sorted newest-first and that all required fields are included in the returned list. Only a compare function is shown; the actual sorting/ordering logic is not visible.",
+      "id": "REQ-15",
+      "requirement": "In frontend/src/pages/FaqsPage.tsx, the “What should my video include?” answer states the time limit is around 2–4 minutes (and no longer suggests 3–10 minutes).",
+      "reason": "The relevant portion of the “What should my video include?” answer is truncated in the diff summary, so the updated time limit text is not visible/confirmable.",
       "evidence": [
-        "backend/main.mo (truncated)"
+        "frontend/src/pages/FaqsPage.tsx (truncated at “What should my video include?” content)"
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "requirement": "The FAQs page includes the application deadline as August 1st, 2026; states winners will be announced via email on September 1st, 2026; and states the performance will be mid November in Times Square.",
+      "reason": "The diff snippet for frontend/src/pages/FaqsPage.tsx does not show any of the 2026 deadline/announcement/performance timeline text, and the file is truncated before those details can be confirmed.",
+      "evidence": [
+        "frontend/src/pages/FaqsPage.tsx (truncated)"
       ]
     }
   ],
   "hallucinated_features": [
     {
-      "description": "Admin/access-control system with admin-only Stripe configuration and secret-based initialization from a URL parameter.",
-      "reason": "The BuildRequest explicitly lists admin authentication/role management as a non-goal, but the diff adds permissions, admin checks, and an initialization flow using a secret token.",
+      "description": "Updated/added repository metadata/summaries (frontend-file-summaries.txt) describing many other pages and features beyond the requested FAQ text updates.",
+      "reason": "BuildRequest only asks to update FAQ content (REQ-15) and explicitly includes constraints/non-goals; changing summary/metadata files is not requested.",
       "evidence": [
-        "backend/main.mo (truncated)",
-        "frontend/src/hooks/useActor.ts",
-        "frontend/src/utils/urlParams.ts (truncated)"
+        "frontend-file-summaries.txt"
       ]
     },
     {
-      "description": "User profile management endpoints (get/save caller profile, view profile).",
-      "reason": "User profiles are not requested by any requirement; the request focuses on marketing pages, application submission, payment, FAQs, and an admin listing query.",
+      "description": "Modified project_state.json project summary/state.",
+      "reason": "BuildRequest does not request changing project state metadata; only FAQ content updates were requested.",
       "evidence": [
-        "backend/main.mo (truncated)"
+        "project_state.json (truncated)"
       ]
     }
   ],
-  "confidence": 0.66,
+  "confidence": 0.62,
   "changed_files": [
-    "all_files_summary.json",
-    "backend/main.mo",
     "frontend-file-summaries.txt",
-    "frontend/index.css",
-    "frontend/index.html",
-    "frontend/src/App.tsx",
-    "frontend/src/components/Layout.tsx",
-    "frontend/src/components/SiteFooter.tsx",
-    "frontend/src/components/SiteHeader.tsx",
-    "frontend/src/hooks/useActor.ts",
-    "frontend/src/hooks/useCreateCheckoutSession.ts",
-    "frontend/src/hooks/useInternetIdentity.ts",
-    "frontend/src/hooks/useQueries.ts",
-    "frontend/src/index.css",
-    "frontend/src/main.tsx",
-    "frontend/src/pages/ApplyPage.tsx",
     "frontend/src/pages/FaqsPage.tsx",
-    "frontend/src/pages/HomePage.tsx",
-    "frontend/src/pages/PaymentFailurePage.tsx",
-    "frontend/src/pages/PaymentSuccessPage.tsx",
-    "frontend/src/utils/urlParams.ts",
-    "frontend/tailwind.config.js",
     "project_state.json"
   ]
 }

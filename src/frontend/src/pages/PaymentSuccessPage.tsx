@@ -138,7 +138,7 @@ export default function PaymentSuccessPage() {
             </div>
             <CardTitle className="font-serif text-3xl">Application Submitted!</CardTitle>
             <CardDescription className="font-sans text-base">
-              Thank you for applying to the Jane Elissa Extravaganza
+              Thank you for applying to The Luminary International Music Competition
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
@@ -147,7 +147,7 @@ export default function PaymentSuccessPage() {
                 Your application has been successfully submitted and your payment has been processed. You will receive a confirmation email shortly with your application details.
               </p>
               <p className="font-sans text-sm text-foreground leading-relaxed">
-                Our panel of judges will carefully review all submissions. Winners will be notified via email after the judging period concludes.
+                Our panel of judges will carefully review all submissions. Winners will be notified via email after the judging period concludes and will perform at the Jane Elissa Extravaganza in Times Square, New York City.
               </p>
               <p className="font-sans text-sm text-muted-foreground leading-relaxed">
                 Thank you for supporting leukemia and cancer research through your application fee. Your contribution helps fund life-saving medical research.
