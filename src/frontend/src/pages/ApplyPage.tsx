@@ -21,6 +21,9 @@ export default function ApplyPage() {
             <p className="font-sans text-muted-foreground leading-relaxed">
               Click the button below to open our application form. You'll be able to submit your performance video and complete your application securely.
             </p>
+            <p className="font-sans text-muted-foreground leading-relaxed">
+              After submitting your application, you will be contacted by email regarding your application status.
+            </p>
             <div className="pt-4">
               <Button
                 asChild

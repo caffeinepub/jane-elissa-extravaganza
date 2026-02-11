@@ -2,8 +2,8 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-faqs-content-on-the-faqs-page-to-reflect-the-latest-submission-instructions-and-2026-competition-timeline-1-under-how-do-i-submit-my-performance-instruct-users-to-go-to-the-apply-page-tap-the-application-link-and-fill-out-the-external-form-2-under-what-should-my-video-include-update-the-suggested-time-limit-to-around-2-4-minutes-3-add-adjust-faq-content-to-state-the-application-deadline-is-august-1st-2026-winners-will-be-announced-via-email-on-september-1st-2026-and-the-performance-will-be-mid-november-in-times-square",
-      "featureTitle": "Update the FAQs content on the FAQs page to reflect the latest submission instructions and 2026 competition timeline: (1) Under “How do I submit my performance?”, instruct users to go to the Apply page, tap the application link, and fill out the external form. (2) Under “What should my video include?”, update the suggested time limit to around 2–4 minutes. (3) Add/adjust FAQ content to state the application deadline is August 1st, 2026; winners will be announced via email on September 1st, 2026; and the performance will be mid November in Times Square.",
+      "featureId": "feature-remove-the-faq-question-titled-what-are-the-terms-and-conditions-from-the-faqs-page-so-it-no-longer-appears-anywhere-on-the-faqs-route",
+      "featureTitle": "Remove the FAQ question titled “What are the terms and conditions?” from the FAQs page so it no longer appears anywhere on the /faqs route.",
       "files": [
         "frontend/src/pages/FaqsPage.tsx"
       ],
@@ -19,7 +19,7 @@
         "authorization@4.0.0"
       ],
       "testIds": [
-        "REQ-15"
+        "REQ-1"
       ],
       "confidence": "high"
     }

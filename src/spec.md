@@ -1,11 +1,10 @@
 # Specification
 
 ## Summary
-**Goal:** Update the FAQs page content to reflect the latest submission instructions, video time limit guidance, and the 2026 competition timeline.
+**Goal:** Remove the FAQ entry titled “What are the terms and conditions?” from the /faqs page.
 
 **Planned changes:**
-- Update the FAQ answer for “How do I submit my performance?” to instruct users to go to the Apply page, tap the external application link, and complete the form.
-- Update the FAQ answer for “What should my video include?” to state the suggested time limit is around 2–4 minutes (removing the previous 3–10 minutes guidance).
-- Add/adjust FAQ content to state: application deadline is August 1st, 2026; winners announced via email on September 1st, 2026; performance will be mid November in Times Square.
+- Delete the “What are the terms and conditions?” accordion item from the FAQs data/rendering used on the /faqs route.
+- Ensure the Terms & Conditions section does not render an empty/blank accordion item after the removal.
 
-**User-visible outcome:** Visitors to the FAQs page see updated, accurate instructions for submitting an application, updated video length guidance, and the correct 2026 deadline/announcement/performance timeline in the existing accordion UI.
+**User-visible outcome:** On /faqs, the “What are the terms and conditions?” question no longer appears, and the remaining FAQ sections/items display normally without errors.

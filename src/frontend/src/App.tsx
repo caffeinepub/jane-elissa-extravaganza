@@ -5,6 +5,7 @@ import FaqsPage from './pages/FaqsPage';
 import PaymentSuccessPage from './pages/PaymentSuccessPage';
 import PaymentFailurePage from './pages/PaymentFailurePage';
 import Layout from './components/Layout';
+import SitePublishGate from './components/SitePublishGate';
 
 const rootRoute = createRootRoute({
   component: Layout
@@ -57,6 +58,9 @@ declare module '@tanstack/react-router' {
 }
 
 export default function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <SitePublishGate>
+      <RouterProvider router={router} />
+    </SitePublishGate>
+  );
 }
-

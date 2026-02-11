@@ -1,7 +1,7 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-09T00:51:26.306Z",
+  "generatedAt": "2026-02-11T23:54:06.646Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
@@ -11,8 +11,8 @@
     "implemented": 1,
     "items": [
       {
-        "id": "REQ-15",
-        "summary": "Update the FAQs content on the FAQs page to reflect the latest submission instructions and 2026 competition timeline: (1) Under “How do I submit my performance?”, instruct users to go to the Apply page, tap the application link, and fill out the external form. (2) Under “What should my video include?”, update the suggested time limit to around 2–4 minutes. (3) Add/adjust FAQ content to state the application deadline is August 1st, 2026; winners will be announced via email on September 1st, 2026; and the performance will be mid November in Times Square.",
+        "id": "REQ-1",
+        "summary": "Remove the FAQ question titled “What are the terms and conditions?” from the FAQs page so it no longer appears anywhere on the /faqs route.",
         "status": "implemented",
         "plannedFiles": [
           "frontend/src/pages/FaqsPage.tsx"

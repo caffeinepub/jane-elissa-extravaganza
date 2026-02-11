@@ -107,8 +107,10 @@ export interface backendInterface {
     getStripeSessionStatus(sessionId: string): Promise<StripeSessionStatus>;
     getUserProfile(user: Principal): Promise<UserProfile | null>;
     isCallerAdmin(): Promise<boolean>;
+    isPublished(): Promise<boolean>;
     isStripeConfigured(): Promise<boolean>;
     saveCallerUserProfile(profile: UserProfile): Promise<void>;
+    setSitePublishedState(publish: boolean): Promise<void>;
     setStripeConfiguration(config: StripeConfiguration): Promise<void>;
     submitApplication(newApplication: Application): Promise<void>;
     transform(input: TransformationInput): Promise<TransformationOutput>;

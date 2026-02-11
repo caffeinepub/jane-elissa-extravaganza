@@ -1,24 +1,21 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Update FAQs submission instructions, video time limit, and 2026 timeline",
+  "title": "Remove specific Terms & Conditions FAQ entry",
   "requirements": [
     {
-      "id": "REQ-15",
-      "summary": "Revise FAQs page content to reflect updated submission flow, 2–4 minute video guidance, and 2026 deadline/announcement/performance timeline.",
+      "id": "REQ-1",
+      "summary": "Remove the FAQ question titled “What are the terms and conditions?” from the /faqs page so it no longer renders, without leaving empty accordion space.",
       "acceptanceCriteria": [
-        "In frontend/src/pages/FaqsPage.tsx, the answer for “How do I submit my performance?” explicitly tells users to go to the Apply page and use the external link to fill out the form.",
-        "In frontend/src/pages/FaqsPage.tsx, the “What should my video include?” answer states the time limit is around 2–4 minutes (and no longer suggests 3–10 minutes).",
-        "The FAQs page includes the application deadline as August 1st, 2026.",
-        "The FAQs page states winners will be announced via email on September 1st, 2026.",
-        "The FAQs page states the performance will be mid November in Times Square.",
-        "All updated FAQ user-facing text is in English and renders correctly in the accordion UI."
+        "On the /faqs page, the accordion question text “What are the terms and conditions?” is not rendered.",
+        "No empty/blank accordion item remains in the Terms & Conditions section after removal.",
+        "The remaining FAQ items and section layout continue to render without visual or runtime errors."
       ],
       "file_operations": [
         {
           "path": "frontend/src/pages/FaqsPage.tsx",
           "operation": "modify",
-          "description": "Update accordion answer copy: (1) change “How do I submit my performance?” to instruct users to go to the Apply page, tap the external application link, and fill out the external form; (2) update “What should my video include?” to recommend around 2–4 minutes (removing the 3–10 minutes guidance); (3) add/adjust FAQ content to explicitly state the application deadline (August 1st, 2026), winner email announcement date (September 1st, 2026), and that the performance will be mid November in Times Square—without modifying any files under frontend/src/components/ui."
+          "description": "Delete the specific AccordionItem under the “Terms & Conditions” card that renders the question text “What are the terms and conditions?” (the item currently keyed as terms-1), ensuring the surrounding Accordion structure remains valid and the remaining terms items continue to display normally. Do not modify any files under frontend/src/components/ui."
         }
       ]
     }

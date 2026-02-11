@@ -1,43 +1,26 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-09T00:51:26.304Z",
-  "summary": "REQ-15 appears partially implemented: the “How do I submit my performance?” FAQ answer is updated as requested. However, due to truncation of frontend/src/pages/FaqsPage.tsx in the diff summary, the updated “What should my video include?” time limit and the specific 2026 timeline statements cannot be conclusively verified from the provided evidence.",
-  "missing_requirements": [
+  "generatedAt": "2026-02-11T23:54:06.643Z",
+  "summary": "REQ-1 appears to be implemented: the FAQ item titled “What are the terms and conditions?” is described as removed from the Terms & Conditions section on the /faqs page. No other explicit BuildRequest requirements are evident as missing from the provided diff summary. However, there are modifications to tracking/summary files that were not requested by the BuildRequest.",
+  "missing_requirements": [],
+  "hallucinated_features": [
     {
-      "id": "REQ-15",
-      "requirement": "In frontend/src/pages/FaqsPage.tsx, the “What should my video include?” answer states the time limit is around 2–4 minutes (and no longer suggests 3–10 minutes).",
-      "reason": "The relevant portion of the “What should my video include?” answer is truncated in the diff summary, so the updated time limit text is not visible/confirmable.",
+      "description": "Updated/added descriptive project metadata and feature request tracking unrelated to the requested FAQ removal (e.g., marking new_feature_requests, pending statuses, and broader project summary).",
+      "reason": "The BuildRequest only asks to remove a specific FAQ entry; it does not request changes to project tracking metadata.",
       "evidence": [
-        "frontend/src/pages/FaqsPage.tsx (truncated at “What should my video include?” content)"
+        "project_state.json"
       ]
     },
     {
-      "id": "REQ-15",
-      "requirement": "The FAQs page includes the application deadline as August 1st, 2026; states winners will be announced via email on September 1st, 2026; and states the performance will be mid November in Times Square.",
-      "reason": "The diff snippet for frontend/src/pages/FaqsPage.tsx does not show any of the 2026 deadline/announcement/performance timeline text, and the file is truncated before those details can be confirmed.",
-      "evidence": [
-        "frontend/src/pages/FaqsPage.tsx (truncated)"
-      ]
-    }
-  ],
-  "hallucinated_features": [
-    {
-      "description": "Updated/added repository metadata/summaries (frontend-file-summaries.txt) describing many other pages and features beyond the requested FAQ text updates.",
-      "reason": "BuildRequest only asks to update FAQ content (REQ-15) and explicitly includes constraints/non-goals; changing summary/metadata files is not requested.",
+      "description": "Updated repository-wide frontend file summary text beyond the specific FAQ removal (includes many unrelated feature descriptions such as SitePublishGate, offline page, SEO tags, Stripe hook fixes, etc.).",
+      "reason": "The BuildRequest only requests removing one FAQ item; it does not request updating a global file summary document or documenting unrelated features.",
       "evidence": [
         "frontend-file-summaries.txt"
       ]
-    },
-    {
-      "description": "Modified project_state.json project summary/state.",
-      "reason": "BuildRequest does not request changing project state metadata; only FAQ content updates were requested.",
-      "evidence": [
-        "project_state.json (truncated)"
-      ]
     }
   ],
-  "confidence": 0.62,
+  "confidence": 0.74,
   "changed_files": [
     "frontend-file-summaries.txt",
     "frontend/src/pages/FaqsPage.tsx",

@@ -200,8 +200,10 @@ export interface backendInterface {
     getStripeSessionStatus(sessionId: string): Promise<StripeSessionStatus>;
     getUserProfile(user: Principal): Promise<UserProfile | null>;
     isCallerAdmin(): Promise<boolean>;
+    isPublished(): Promise<boolean>;
     isStripeConfigured(): Promise<boolean>;
     saveCallerUserProfile(profile: UserProfile): Promise<void>;
+    setSitePublishedState(publish: boolean): Promise<void>;
     setStripeConfiguration(config: StripeConfiguration): Promise<void>;
     submitApplication(newApplication: Application): Promise<void>;
     transform(input: TransformationInput): Promise<TransformationOutput>;
@@ -448,6 +450,20 @@ export class Backend implements backendInterface {
             return result;
         }
     }
+    async isPublished(): Promise<boolean> {
+        if (this.processError) {
+            try {
+                const result = await this.actor.isPublished();
+                return result;
+            } catch (e) {
+                this.processError(e);
+                throw new Error("unreachable");
+            }
+        } else {
+            const result = await this.actor.isPublished();
+            return result;
+        }
+    }
     async isStripeConfigured(): Promise<boolean> {
         if (this.processError) {
             try {
@@ -473,6 +489,20 @@ export class Backend implements backendInterface {
             }
         } else {
             const result = await this.actor.saveCallerUserProfile(arg0);
+            return result;
+        }
+    }
+    async setSitePublishedState(arg0: boolean): Promise<void> {
+        if (this.processError) {
+            try {
+                const result = await this.actor.setSitePublishedState(arg0);
+                return result;
+            } catch (e) {
+                this.processError(e);
+                throw new Error("unreachable");
+            }
+        } else {
+            const result = await this.actor.setSitePublishedState(arg0);
             return result;
         }
     }

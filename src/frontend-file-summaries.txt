@@ -1,18 +1,23 @@
 {
   "frontend/index.css": "Global styles with prestigious charcoal/ivory/gold OKLCH color palette, Cormorant Garamond serif and Montserrat sans fonts, and subtle background pattern integration.",
   "frontend/tailwind.config.js": "Tailwind configuration extending theme with custom serif/sans font families, elegant shadow utilities, and refined border radius values for premium aesthetic.",
-  "frontend/src/App.tsx": "Main application component with TanStack Router setup defining routes for Home, Apply, FAQs, and payment result pages using a shared Layout wrapper.",
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup, now wrapped with SitePublishGate to control access based on publish status.",
   "frontend/src/components/Layout.tsx": "Root layout component wrapping all pages with persistent SiteHeader and SiteFooter, providing consistent navigation and structure.",
   "frontend/src/components/SiteHeader.tsx": "Navigation header with competition branding text only (logo image removed), featuring responsive navigation links for Home, Apply, and FAQs.",
   "frontend/src/components/SiteFooter.tsx": "Formal footer with updated competition name and description clarifying that the winner performs at the Jane Elissa Extravaganza event in Times Square with Broadway stars.",
-  "frontend/src/pages/HomePage.tsx": "Landing page with gradient background hero section (no photograph), updated competition branding, and clear messaging about performing at the Jane Elissa Extravaganza in Times Square.",
-  "frontend/src/pages/FaqsPage.tsx": "FAQ page with accordion displaying comprehensive Q&A about The Luminary International Music Competition, including updated submission instructions (directing users to Apply page), 2-4 minute video time limit, August 1st 2026 deadline, September 1st 2026 winner announcement date, and mid November Times Square performance details.",
-  "frontend/src/pages/ApplyPage.tsx": "Simple application page with a single call-to-action button that opens the external JotForm application at https://pci.jotform.com/form/260387196671063 in a new tab.",
+  "frontend/src/pages/HomePage.tsx": "Landing page with gradient hero section, timeline, features, cause section, FAQ preview component (now positioned above the \"Ready to Apply?\" CTA section), and \"Ready to Apply?\" CTA section with email contact copy.",
+  "frontend/src/pages/FaqsPage.tsx": "Comprehensive FAQ page organized into six themed card sections (Competition Details, Eligibility, Submission Guidelines, Judging Criteria, Prizes & Benefits, Terms & Conditions) with accordion items covering all standard competition information, with the \"What are the terms and conditions?\" FAQ item removed from the Terms & Conditions section.",
+  "frontend/src/pages/ApplyPage.tsx": "Simple application page with a single call-to-action button that opens the external JotForm application, now including copy that applicants will be contacted by email.",
   "frontend/src/pages/PaymentSuccessPage.tsx": "Payment success confirmation page with updated competition branding thanking users for applying to The Luminary International Music Competition and mentioning the Jane Elissa Extravaganza performance opportunity.",
   "frontend/src/pages/PaymentFailurePage.tsx": "Payment failure page informing users their payment was cancelled, preserving application draft, and offering options to retry or return home.",
   "frontend/src/hooks/useQueries.ts": "React Query hooks for checking Stripe configuration and finalizing application submission, now correctly using useInternetIdentity to get the caller's Principal instead of non-existent actor method.",
   "frontend/src/hooks/useCreateCheckoutSession.ts": "React Query mutation hook creating Stripe checkout sessions with proper JSON parsing, URL validation, and error handling for payment flow.",
   "frontend/src/main.tsx": "Application entry point that sets up React Query and Internet Identity providers with correct relative CSS import path.",
   "frontend/src/index.css": "Global styles with prestigious charcoal/ivory/gold OKLCH color palette, Cormorant Garamond serif and Montserrat sans fonts, and subtle background pattern integration.",
-  "frontend/index.html": "HTML entry point with updated document title to \"The Luminary International Music Competition\"."
+  "frontend/index.html": "HTML entry point with canonical link to https://luminarycompetition.com/, OpenGraph/Twitter meta tags for SEO, and updated document title for The Luminary International Music Competition.",
+  "frontend/src/hooks/useSitePublished.ts": "React Query hook that fetches the site's published status from the backend with exponential backoff retry strategy (3 retries, up to 10s delay) for improved resilience.",
+  "frontend/src/pages/SiteOfflinePage.tsx": "Dedicated offline screen displaying a maintenance message when the site is unpublished, with centered layout and elegant typography.",
+  "frontend/src/components/SitePublishGate.tsx": "Top-level gate component that conditionally renders the offline page, error state with retry button, or normal app based on the site's published status and connection health.",
+  "frontend/IONOS_CUSTOM_DOMAIN_SETUP.md": "Documentation guide explaining how to configure IONOS DNS records to point luminarycompetition.com to the deployed Internet Computer application, including verification steps and troubleshooting tips.",
+  "frontend/src/components/HomeFaqPreview.tsx": "Reusable FAQ preview component displaying a curated subset of five key FAQs (including travel/accommodation notice) in an accordion format with a clear \"View All FAQs\" button linking to the full /faqs page."
 }

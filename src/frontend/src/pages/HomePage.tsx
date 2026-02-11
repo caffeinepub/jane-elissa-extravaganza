@@ -1,7 +1,8 @@
 import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Music, Award, Heart, MapPin } from 'lucide-react';
+import { Music, Award, Heart, MapPin, Calendar, Trophy } from 'lucide-react';
+import HomeFaqPreview from '@/components/HomeFaqPreview';
 
 export default function HomePage() {
   return (
@@ -19,6 +20,37 @@ export default function HomePage() {
             <p className="font-sans text-lg md:text-xl text-foreground/80 leading-relaxed max-w-2xl mx-auto">
               Showcase your talent on one of the world's most iconic stages. The winner performs at the annual Jane Elissa Extravaganza in Times Square, New York City, alongside celebrated Broadway stars.
             </p>
+
+            {/* Competition Timeline */}
+            <div className="pt-6 pb-4">
+              <Card className="border-accent/30 bg-accent/5 shadow-elegant max-w-xl mx-auto">
+                <CardContent className="pt-6 pb-6">
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
+                        <Calendar className="h-6 w-6 text-accent" />
+                      </div>
+                      <div className="text-left">
+                        <p className="font-sans text-xs text-muted-foreground uppercase tracking-wide">Application Deadline</p>
+                        <p className="font-serif text-base font-semibold text-foreground">August 1st, 2026</p>
+                        <p className="font-sans text-xs text-muted-foreground">12:00 AM PST</p>
+                      </div>
+                    </div>
+                    <div className="hidden sm:block w-px h-12 bg-border"></div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
+                        <Trophy className="h-6 w-6 text-accent" />
+                      </div>
+                      <div className="text-left">
+                        <p className="font-sans text-xs text-muted-foreground uppercase tracking-wide">Winners Announced</p>
+                        <p className="font-serif text-base font-semibold text-foreground">September 1st, 2026</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
             <div className="pt-4">
               <Link to="/apply">
                 <Button size="lg" className="font-sans text-base px-8 py-6 bg-accent text-accent-foreground hover:bg-accent/90 shadow-elegant">
@@ -91,6 +123,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* FAQ Preview Section */}
+      <HomeFaqPreview />
+
       {/* CTA Section */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -98,6 +133,9 @@ export default function HomePage() {
             <h2 className="font-serif text-3xl md:text-4xl font-bold">Ready to Apply?</h2>
             <p className="font-sans text-lg text-muted-foreground leading-relaxed">
               Submit your video performance and take the first step toward performing at the Jane Elissa Extravaganza in Times Square with Broadway stars.
+            </p>
+            <p className="font-sans text-base text-muted-foreground">
+              All applicants will be contacted by email regarding their application status.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Link to="/apply">

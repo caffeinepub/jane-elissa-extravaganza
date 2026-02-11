@@ -1,37 +1,36 @@
 {
   "kind": "build_request",
-  "title": "Update FAQs with new submission instructions, video time limit, and 2026 timeline",
+  "title": "Remove the “What are the terms and conditions?” FAQ entry",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-15",
-      "text": "Update the FAQs content on the FAQs page to reflect the latest submission instructions and 2026 competition timeline: (1) Under “How do I submit my performance?”, instruct users to go to the Apply page, tap the application link, and fill out the external form. (2) Under “What should my video include?”, update the suggested time limit to around 2–4 minutes. (3) Add/adjust FAQ content to state the application deadline is August 1st, 2026; winners will be announced via email on September 1st, 2026; and the performance will be mid November in Times Square.",
+      "id": "REQ-1",
+      "text": "Remove the FAQ question titled “What are the terms and conditions?” from the FAQs page so it no longer appears anywhere on the /faqs route.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-1"
         ],
         "quotes": [
-          "IN faqs under how do i submit my performance. Tell them to go to apply and then tap on the link and fill out the form.\n\nUnder what should my video include the time limit is around 2-4 minutes\n\nDeadline is August 1st, 2026.\nWinners will be announced through email September 1st, 2026.\n\nPerformance will be mid November in Times Square."
+          "please remove the FAQ “what are the terms and conditions”"
         ]
       },
       "acceptanceCriteria": [
-        "In frontend/src/pages/FaqsPage.tsx, the answer for “How do I submit my performance?” explicitly tells users to go to the Apply page and use the external link to fill out the form.",
-        "In frontend/src/pages/FaqsPage.tsx, the “What should my video include?” answer states the time limit is around 2–4 minutes (and no longer suggests 3–10 minutes).",
-        "The FAQs page includes the application deadline as August 1st, 2026.",
-        "The FAQs page states winners will be announced via email on September 1st, 2026.",
-        "The FAQs page states the performance will be mid November in Times Square.",
-        "All updated FAQ user-facing text is in English and renders correctly in the accordion UI."
+        "On the /faqs page, the accordion question text “What are the terms and conditions?” is not rendered.",
+        "No empty/blank accordion item remains in the Terms & Conditions section after removal.",
+        "The remaining FAQ items and section layout continue to render without visual or runtime errors."
       ]
     }
   ],
   "constraints": [
-    "Do not edit any files under frontend/src/components/ui (Shadcn UI components are read-only).",
-    "Do not modify files listed as immutable in SYSTEM_CONTEXT (compose them instead of editing)."
+    "Use English for any user-facing text.",
+    "Do not edit files under frontend/src/components/ui (read-only).",
+    "Do not edit any paths listed as immutable in SYSTEM_CONTEXT (e.g., frontend/src/hooks/useInternetIdentity.ts(x), frontend/src/hooks/useActor.ts, frontend/src/main.tsx)."
   ],
   "nonGoals": [
-    "Changing the Apply page behavior or URL (it must remain an external link to https://pci.jotform.com/form/260387196671063).",
-    "Adding new backend functionality or changing backend data models for this request."
+    "Configuring or changing the custom domain (e.g., luminarycompetition.com).",
+    "Addressing intermittent post-deploy “Connection error” behavior.",
+    "Reordering homepage sections or changing other FAQ items beyond the single requested question."
   ],
   "imageRequirements": {
     "required": [],

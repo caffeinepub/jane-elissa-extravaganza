@@ -1,3 +1,4 @@
+
 import MixinStorage "blob-storage/Mixin";
 import Storage "blob-storage/Storage";
 import Stripe "stripe/stripe";
@@ -13,6 +14,8 @@ import OutCall "http-outcalls/outcall";
 import AccessControl "authorization/access-control";
 import Runtime "mo:core/Runtime";
 import MixinAuthorization "authorization/MixinAuthorization";
+
+// include migration function with correct naming
 
 actor {
   include MixinStorage();
@@ -62,6 +65,22 @@ actor {
 
   var stripeConfig : ?Stripe.StripeConfiguration = null;
 
+  // NEW: Site publish state (persists after upgrades)
+  var isSitePublished = true;
+
+  // Admin: Mark a site as published/unpublished
+  public shared ({ caller }) func setSitePublishedState(publish : Bool) : async () {
+    if (not (AccessControl.hasPermission(accessControlState, caller, #admin))) {
+      Runtime.trap("Unauthorized: Only admins can publish/unpublish the site");
+    };
+    isSitePublished := publish;
+  };
+
+  // Public: Get current site published state
+  public query func isPublished() : async Bool {
+    isSitePublished;
+  };
+
   // User profile management
   public query ({ caller }) func getCallerUserProfile() : async ?UserProfile {
     if (not (AccessControl.hasPermission(accessControlState, caller, #user))) {
@@ -86,6 +105,11 @@ actor {
 
   // Application submission - accessible to anyone (guests can apply)
   public shared ({ caller }) func submitApplication(newApplication : Application) : async () {
+    // Block public write operation when unpublished
+    if (not isSitePublished and not AccessControl.isAdmin(accessControlState, caller)) {
+      Runtime.trap("The site is currently offline. Please try again later.");
+    };
+
     // Verify the applicant field matches the caller
     if (newApplication.applicant.notEqual(caller)) {
       Runtime.trap("Unauthorized: Cannot submit application for another user");
@@ -169,11 +193,18 @@ actor {
 
   // Create Stripe session - accessible to anyone submitting an application
   public shared ({ caller }) func createCheckoutSession(items : [Stripe.ShoppingItem], successUrl : Text, cancelUrl : Text) : async Text {
+    if (not isSitePublished and not AccessControl.isAdmin(accessControlState, caller)) {
+      Runtime.trap("The site is currently offline. Please try again later.");
+    };
     await Stripe.createCheckoutSession(getStripeConfiguration(), caller, items, successUrl, cancelUrl, transform);
   };
 
   // Get Stripe session status - accessible to anyone checking their payment
-  public func getStripeSessionStatus(sessionId : Text) : async Stripe.StripeSessionStatus {
+  public shared ({ caller }) func getStripeSessionStatus(sessionId : Text) : async Stripe.StripeSessionStatus {
+    // Block payment status checks when site is unpublished (non-admins only)
+    if (not isSitePublished and not AccessControl.isAdmin(accessControlState, caller)) {
+      Runtime.trap("The site is currently offline. Please try again later.");
+    };
     await Stripe.getSessionStatus(getStripeConfiguration(), sessionId, transform);
   };
 };
